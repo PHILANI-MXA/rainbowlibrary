@@ -11,13 +11,19 @@ const routes = [
     path: '/signup',
     name: 'signup',
     // route level code-splitting
-    component: () => import(/* webpackChunkName: "about" */ '../views/SignUpView.vue')
+    component: () => import('../views/SignUpView.vue')
   },
   {
     path: '/login',
     name: 'login',
     // route level code-splitting
-    component: () => import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
+    component: () => import('../views/LoginView.vue')
+  },
+  {
+    path: '/allbooks',
+    name: 'allbooks',
+    // route level code-splitting
+    component: () => import('../views/AllbooksView.vue')
   }
 ];
 

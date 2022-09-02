@@ -33,7 +33,7 @@ export default {
         }
     },
     methods: {
-        register() {
+        login() {
             this.$store.dispatch('login', {
             email: this.email,
             user_password: this.user_password

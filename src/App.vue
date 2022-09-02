@@ -3,7 +3,7 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </nav> -->
-  <NavComponent/>
+   <NavbarWorking/>
   <FooterComponent/>
   <!-- <router-view/> -->
 
@@ -11,11 +11,12 @@
 
 <script>
 import FooterComponent from './components/FooterComponent.vue';
-import NavComponent from './components/NavComponent.vue';
+import NavbarWorking from './components/NavbarWorking.vue';
+
 export default {
   components: {
     FooterComponent,
-    NavComponent
+    NavbarWorking
 }
 }
 </script>

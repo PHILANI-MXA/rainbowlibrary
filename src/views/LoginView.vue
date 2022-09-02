@@ -28,7 +28,7 @@ export default {
     data() {
         return {
             email: '',
-            user_password: ''
+            password: ''
 
         }
     },
@@ -36,7 +36,7 @@ export default {
         register() {
             this.$store.dispatch('login', {
             email: this.email,
-            user_password: this.user_password
+            password: this.password
         });
         }
     }

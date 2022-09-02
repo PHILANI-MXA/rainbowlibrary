@@ -1,37 +1,25 @@
 <template>
-   <!-- <div id="form" class="">
-        <SignUpComp />
-   </div> -->
-    <div id="signup" class="container min-vh-100">
+<div id="signup" class="container min-vh-100">
 <h2 class="fw-bold p-2">Register</h2>
 <div class="col-md-6 m-auto">
     <form class="container border border-black h-100" @submit.prevent="register">
     <h4 class="text-decoration-underline fw-bold text-white">Sign Up</h4>
   <div class="form-group">
-    <label for="fullname">Fullname</label>
-    <input type="text" class="form-control pass m-auto" id="fullname" v-model="user_fullname">
+    <label for="firstName">Firstname</label>
+    <input type="text" class="form-control pass m-auto" id="firstName" v-model="firstName">
+  </div>
+    <div class="form-group">
+    <label for="lastName">lastName</label>
+    <input type="text" class="form-control pass m-auto" id="lastName" v-model="lastName">
   </div>
     <div class="form-group">
     <label for="email">Email</label>
     <input type="email" class="form-control pass m-auto" id="email" v-model="email">
   </div>
    <div class="form-group">
-    <label for="role">User Role</label>
-    <input type="text" class="form-control pass m-auto" id="role" v-model="user_role">
-  </div>
-   <div class="form-group">
     <label for="password">password</label>
-    <input type="password" class="form-control pass m-auto" id="password" v-model="user_password">
+    <input type="password" class="form-control pass m-auto" id="password" v-model="password">
   </div>
-    <div class="form-group">
-    <label for="number">phone number</label>
-    <input type="tel" class="form-control pass m-auto" id="number" v-model="phone_number">
-  </div>
-   <div class="form-group">
-    <label for="date">joinDate</label>
-    <input type="date" class="form-control pass m-auto" id="date" v-model="join_date">
-  </div>
-  
   <button class="btn btn-primary my-5" type="submit">Submit</button>
 </form>
 </div>
@@ -41,28 +29,24 @@
 
 <script>
 
-// import SignUpComp from '@/components/signUpComp.vue';
-
 export default {
 
     data() {
-        return {
-            user_fullname: '',
+    return {
+            firstName: '',
+            lastName: '',
             email: '',
-            user_password: '',
-            user_role: '',
-            phone_number: null,
+            password: ''
         }
     },
     methods: {
         register() {
-            this.$store.dispatch('register', {
-            user_fullname: this.user_fullname,
+        this.$store.dispatch('register', {
+            firstName: this.firstName,
+            lastName: this.lastName,
             email: this.email,
-            user_password: this.user_password,
-            user_role: this.user_role,
-            phone_number: this.phone_number,
-        });
+            password: this.password
+      });
         }
     }
     
