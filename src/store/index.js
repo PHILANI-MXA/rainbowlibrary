@@ -8,7 +8,8 @@ export default createStore({
     users: null,
     user: null,
     products: null,
-    product: null
+    product: null,
+    userMsg: null
   },
   getters: {
     getUsers: state => state.users,
@@ -28,6 +29,9 @@ export default createStore({
     },
     setProduct (state, value) {
       state.product = value;
+    },
+    setUserMsg (state, value) { 
+      state.userMsg = value;
     }
 
   },
@@ -71,9 +75,12 @@ export default createStore({
         password
       };
       const res = await axios.post(bookLib + 'users/register', data);
-      const results = await res.data;
+      const { results, msg, err } = await res.data;
       if (results) {
         context.commit('setUsers', results);
+        context.commit('setUserMsg', msg);
+      } else {
+        context.commit('setUserMsg', err);
       }
     },
     login: async (context, payload) => {

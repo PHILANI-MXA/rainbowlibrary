@@ -20,6 +20,9 @@
     <label for="password">password</label>
     <input type="password" class="form-control pass m-auto" id="password" v-model="password">
   </div>
+  <div class="form-group">
+    <label class="form-control" v-show="userMsg">{{userMsg}}</label>
+  </div>
   <button class="btn btn-primary my-5" type="submit">Submit</button>
 </form>
 </div>
@@ -38,7 +41,12 @@ export default {
             email: '',
             password: ''
         }
-    },
+  },
+  computed: {
+    userMsg() {
+      return this.$store.state.userMsg
+    }
+  },
     methods: {
         register() {
         this.$store.dispatch('register', {
